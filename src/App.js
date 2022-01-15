@@ -13,12 +13,14 @@ function App() {
   ]);
   console.log(boxes)
 
+///// copys current array and adds new object to array \\\\\
   const addBox = (newBox) => {
     setBoxes([
       ...boxes, newBox
     ])
   }
 
+///// keyword={functionName} passes function as props to children as props.keyword \\\\\
   return (
     <div className="App">
 
