@@ -1,31 +1,33 @@
 import React from 'react';
 
-    ///// props = boxes passed from app.js \\\\\ 
+///// props = boxes passed from app.js \\\\\ 
 const RenderBoxes = (props) => {
     console.log(props)
-
+    
+    // const {boxesProp} = props;
+    // console.log("*** test ***");
     return (
         
         <div className="d-inline-flex flex-wrap">
 
-            {   
-            ///// for each box in boxes -> return styled div \\\\\
+            {
+                ///// for each box in boxes -> return styled div \\\\\
+                console.log("*** test ***"),
                 props.boxes.map((box, idx) => {
-                    return <div key={idx} style={{
+                        return <div key={idx} style={{
                         backgroundColor: box.color,
                         height: box.height,
                         width: box.width,
-                        margin: 10
+                        margin: 10,
                     }} />
                 })
-                
             }
 
         </div>
-
     )
 }
 
+export default RenderBoxes;
 
 
 
@@ -52,6 +54,3 @@ const RenderBoxes = (props) => {
 // } */}
 
 
-
-export default RenderBoxes;
-// export default Boxes;

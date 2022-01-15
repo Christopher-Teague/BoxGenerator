@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-// import BoxForm from './components/BoxForm';
+import BoxForm from './components/BoxForm';
 import RenderBoxes from './components/RenderBoxes';
 
 function App() {
@@ -10,25 +10,30 @@ function App() {
     { color: "red", height: 100, width: 100 },
     { color: "gold", height: 100, width: 100 },
     { color: "green", height: 100, width: 100 },
-    { color: "blue", height: 100, width: 100 },
-
   ]);
   console.log(boxes)
 
+  const addBox = (newBox) => {
+    setBoxes([
+      ...boxes, newBox
+    ])
+  }
+
   return (
     <div className="App">
-      <fieldset>
-        <legend>Box Generator</legend>
-        {/* <BoxForm createBox={createBox}/> */}
-        {/* { 
-          boxes.map( (box, idx) => {
-            return <RenderBoxes key={idx} boxes={boxes} /> 
-          })
-          } */}
-        <RenderBoxes  boxes={boxes} />
-      </fieldset>
+
+        <h3>Box Generator</h3>
+        <BoxForm addBox={addBox} />
+        <RenderBoxes boxes={boxes} />
+
     </div>
   );
 }
 
 export default App;
+
+{/* { 
+  boxes.map( (box, idx) => {
+    return <RenderBoxes key={idx} boxes={boxes} /> 
+  })
+  } */}

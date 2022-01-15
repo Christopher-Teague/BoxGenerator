@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styles from styled-components';
  
 const StyledBox = styled.div`
     border: 1px solid black;
