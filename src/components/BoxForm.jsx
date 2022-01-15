@@ -6,9 +6,12 @@ const BoxForm = (props) => {
     const [color, setColor] = useState("");
     const [height, setHeight] = useState("");
     const [width, setWidth] = useState("");
+    
+    ///// Construstor \\\\\
+    const newBox = { color, width, height };
 
-    // const newBox = { color, width, height };
-
+    ///// Create function \\\\\
+///// addBox is a function passed from app.js \\\\\
     const createBox = (e) => {
         e.preventDefault();
         const newBox = { color, height, width}
@@ -17,7 +20,7 @@ const BoxForm = (props) => {
         setHeight("")
         setWidth("")
     };
-
+    ///// onSubmit calls createBox function \\\\\
     return (
         <div className="d-inline-flex">
 
